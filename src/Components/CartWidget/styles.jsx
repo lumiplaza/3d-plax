@@ -10,10 +10,7 @@ export const CartButton = styled.button`
   margin-right: -7rem;
   background-color: white;
   border-style: none;
-  
- 
- 
-  
+
 
  `
  export const ImgCart = styled.img`

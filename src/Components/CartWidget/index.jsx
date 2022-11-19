@@ -1,4 +1,4 @@
-import image from '../../assets/Imagenes/CartIcon2.png';
+import image from '../../assets/Imagenes/CartIcon.png';
 import { CartButton,  ImgCart } from './styles';
 
 const CartWidget = () => {
