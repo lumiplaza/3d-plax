@@ -1,14 +1,13 @@
 
 import ItemListContainer from './Components/ItemListContainer/index.jsx';
-import NavBar from './Components/NavBar/index.jsx';
+import { Layout }  from "./Components/Layout/Layout";
 
 
 const App = () => {
   return (
-    <main>
-      <NavBar />
+    <Layout>
       <ItemListContainer />
-    </main>
+    </Layout>
 );
 }
 

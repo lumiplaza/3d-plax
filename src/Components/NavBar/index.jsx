@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from "react-router-dom";
 
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
@@ -28,9 +29,13 @@ const NavBar = () => {
         <BottomNavigationAction label="Products" icon={<SearchIcon />} />
         <BottomNavigationAction label="More Info" icon={<HelpCenterIcon />} />
         <BottomNavigationAction label="Contact Us" icon={<AlternateEmailIcon />} />
-        <BottomNavigationAction label="Sign In" icon={<LockOpenIcon />} />
+        <BottomNavigationAction  label="Sign In" icon={<LockOpenIcon />}  />
         <CartWidget/>
+        <Link to="/category/videojuegos"> Elementos videojuegos </Link>
       </MenuItemsWrapper>
+      
+                
+      
     </BoxWrapper>
   );
 }
