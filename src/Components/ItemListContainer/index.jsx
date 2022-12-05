@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import ItemList from '../ItemList/index';
 import { useState, useEffect } from "react";
 import  { SectionItems } from './styles.jsx';
-import { articles } from "../../mocks/articles";
+import { Articles } from "../../mocks/articles";
 
 
 
@@ -19,8 +19,8 @@ const ItemListContainer = ( ) => {
             setProducts([]);
 
             return setTimeout(() => {
-              resolve(articles);
-                }, 1000);
+              resolve(Articles);
+                }, 500);
                 }).then((data) => {
             if (category) {
               const categories = data.filter(

@@ -1,13 +1,15 @@
 
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { ItemCount } from "./ItemCount";
+// import { useNavigate } from "react-router-dom";
+import  ItemCount  from "../ItemCount";
 
 
-const ItemDetail = ( {item} ) => {
-    const navigate = useNavigate();
+
+const ItemDetail = ( {data} ) => {
+    
+   // const navigate = useNavigate();
     const [count, setCount] = useState(1);
-    const [currentStock, setCurrentStock] = useState(item.stock);
+    const [currentStock, setCurrentStock] = useState(5);
     const maxQuantity = currentStock;
 
     function handleCount(type) {
@@ -20,20 +22,20 @@ const ItemDetail = ( {item} ) => {
         else setCurrentStock(currentStock - count);
       }
     
-      function handleCheckout() {
+       /*function handleCheckout() {
         navigate("/cart");
-      }
+      }*/
 
       return (
         <div>
-                <div>
-                    <img src={item.img} alt={item.title} />
+             <div>
+                    <img src={data.image} alt={data.title} />
                 </div>
-            <div>
-                <h2>{item.title}</h2>
-                <p>{item.description}</p>
+                 <div>
+                <h2>{data.title}</h2>
+                <p>{data.description}</p>
                 <span>
-                    Price: <strong>${item.price}</strong>
+                    Price: <strong>${data.price}</strong>
                 </span>
                 {currentStock > 0 && (
                 <p>In Stock: {currentStock}</p>)}
@@ -46,12 +48,12 @@ const ItemDetail = ( {item} ) => {
         <button onClick={handleAdd} disabled={currentStock === 0}>
             Agregar al carrito
         </button>
-        <button onClick={handleCheckout}>
+        {/*<button onClick={handleCheckout}>
             Finalizar Compra
-        </button>
+        </button> */}
             </div>
             </div>
-            </div>
+            </div> 
         </div>
   );
 };

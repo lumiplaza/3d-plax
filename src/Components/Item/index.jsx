@@ -1,11 +1,12 @@
 import { ImgContainer , Img } from './styles';
 import { useNavigate } from "react-router-dom"
 
+
 const Item = ({art}) => {
     const navigate = useNavigate();
 
-    const description = art.description.slice(0, 30);
-    const title = art.title.slice(0, 20);
+    // const description = art.description.slice(0, 2);
+     //  const title = art.title.slice(0, 20);  art.title.length > 20 ? `${title} ...` :
 
     function handleNavigate() {
       navigate(`/item/${art.id}`);
@@ -13,16 +14,15 @@ const Item = ({art}) => {
 
     return (
         <ImgContainer>
-            <div onClick={handleNavigate}>
+            <div>
                 <div>
                     <span> 
-                        {art.title.length > 20 ? `${title} ...` : art.title}
+                        {art.title}
                     </span>
                     <Img src={art.image} alt="personaje img"/>
-
-                    <p> {art.description.length > 30
-                         ? `${description} ...` : art.description}
-                    </p>
+                      <button onClick={handleNavigate}>
+                        ver detalles
+                    </button>
                 </div>
             </div>
         </ImgContainer>

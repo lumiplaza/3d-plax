@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App"
-import Item from "../Components/Item";
-import CategoryView from "../views/CategoryView";
+import ItemView from "../views/item";
+import CategoryView from "../views/category";
 
 export const router = createBrowserRouter ([
 
@@ -15,7 +15,7 @@ export const router = createBrowserRouter ([
       },
       {
         path: "/item/:id",
-        element: <Item />,
+        element: <ItemView />,
       },
 
 ])
