@@ -22,6 +22,10 @@ const NavBar = () => {
     navigate("/");
   }
 
+    function goToCart() {
+      navigate("/cart");}
+
+
   return (
     <BoxWrapper>
       <MenuItemsWrapper
@@ -37,7 +41,7 @@ const NavBar = () => {
         <BottomNavigationAction label="More Info" icon={<HelpCenterIcon />} />
         <BottomNavigationAction label="Contact Us" icon={<AlternateEmailIcon />} />
         <BottomNavigationAction  label="Sign In" icon={<LockOpenIcon />}  />
-        <CartWidget/>
+        <CartWidget onClick={goToCart}/>
       </MenuItemsWrapper>
 
     </BoxWrapper>
