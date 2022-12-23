@@ -1,13 +1,13 @@
 
-import { useState } from "react";
-// import { useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
 import  ItemCount  from "../ItemCount";
+import { CartContext } from "../../context/cartContext";
 
 
 
 const ItemDetail = ( {data} ) => {
-    
-   // const navigate = useNavigate();
+
+    const { addItem } = useContext(CartContext);
     const [count, setCount] = useState(1);
     const [currentStock, setCurrentStock] = useState(5);
     const maxQuantity = currentStock;
@@ -19,12 +19,11 @@ const ItemDetail = ( {data} ) => {
     
       function handleAdd() {
         if (currentStock < count) alert("No hay suficiente stock de este producto");
-        else setCurrentStock(currentStock - count);
+        else {
+            setCurrentStock(currentStock - count);
+            addItem(data, count);
+          }
       }
-    
-       /*function handleCheckout() {
-        navigate("/cart");
-      }*/
 
       return (
         <div>
@@ -48,9 +47,7 @@ const ItemDetail = ( {data} ) => {
         <button onClick={handleAdd} disabled={currentStock === 0}>
             Agregar al carrito
         </button>
-        {/*<button onClick={handleCheckout}>
-            Finalizar Compra
-        </button> */}
+      
             </div>
             </div>
             </div> 

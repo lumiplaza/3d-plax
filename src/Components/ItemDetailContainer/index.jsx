@@ -1,23 +1,36 @@
 import  ItemDetail  from "../ItemDetail";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Articles } from "../../mocks/articles";
+// import { Articles } from "../../mocks/articles";
+import { doc, getFirestore, getDoc, collection } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
 
     const [item, setItem] = useState('');
     const { id } = useParams();
+    const [imagenes, setImagenes] = useState([]);
+    
+
 
 
     useEffect(() => {
-        new Promise((resolve) =>
-            setTimeout(() => resolve(Articles.find((item) => item.id === id)), 1000)
-            ).then((data) => setItem(data));
-        }, [id]);
 
-        if (!item) {
-            return <p> Loading...</p>;
-        }
+        const db = getFirestore();
+        const refProps = [db, "articles"];
+        const ref = id ? doc(...refProps, id) : collection(...refProps);
+
+        if (id) {
+            getDoc(ref)
+              .then((item) => {
+                console.log({ item });
+                if (item.exists()) {
+                  setItem({ id: item.id, ...item.data() });
+                }
+              })
+              .catch((err) => console.error({ err }));
+            return;
+          }
+  }, []);
 
     return (
         <div>

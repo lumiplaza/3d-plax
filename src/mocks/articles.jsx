@@ -1,7 +1,7 @@
 export const Articles = [
     {
         id: "1",
-        title: 'Spider-Man', 
+        title: 'Spider-Man',
         image: "https://i.ibb.co/PThzY7z/Spider-man.png",
         description: "descripcion del elemento",
         price: 2000,

@@ -3,6 +3,7 @@ import App from "../App"
 import ItemView from "../views/item";
 import CategoryView from "../views/category";
 import CartView from "../views/cart";
+import LoginView from "../views/login";
 
 export const router = createBrowserRouter ([
 
@@ -21,6 +22,11 @@ export const router = createBrowserRouter ([
       {
         path: "/cart",
         element: <CartView />,
+      },
+
+      {
+        path: "/login",
+        element: <LoginView />,
       },
 
 

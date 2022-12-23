@@ -2,15 +2,19 @@ import { ImgContainer , Img } from './styles';
 import { useNavigate } from "react-router-dom"
 
 
-const Item = ({art}) => {
+
+const Item = ({art, quantityAdded }) => {
     const navigate = useNavigate();
 
-    // const description = art.description.slice(0, 2);
-     //  const title = art.title.slice(0, 20);  art.title.length > 20 ? `${title} ...` :
+    //const description = art.description.slice(0, 30);
+    // const title = art.name.slice(0, 20);
 
     function handleNavigate() {
       navigate(`/item/${art.id}`);
     }
+
+    console.log((`/item/${art.id}`))
+
 
     return (
         <ImgContainer>
